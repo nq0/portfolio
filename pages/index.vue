@@ -1,24 +1,13 @@
 <template>
   <section class="container">
     <div>
-      <logo />
-      <h1 class="title">
-        portfolio
-      </h1>
-      <h2 class="subtitle">
-        My pioneering Nuxt.js project
-      </h2>
+      <button @click="post">そーしん！</button>
+      <logo/>
+      <h1 class="title">portfolio</h1>
+      <h2 class="subtitle">My pioneering Nuxt.js project</h2>
       <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
+        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
+        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
       </div>
     </div>
   </section>
@@ -26,10 +15,49 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import firebase from 'firebase'
 
 export default {
   components: {
     Logo
+  },
+  data: () => ({
+    config: {
+      apiKey: "AIzaSyCZgG6nYx--nb4Q7VwfLPQKLS--uy3no0I",
+      authDomain: "nya-nq.firebaseapp.com",
+      databaseURL: "https://nya-nq.firebaseio.com",
+      projectId: "nya-nq",
+      storageBucket: "nya-nq.appspot.com",
+      messagingSenderId: "567795671860"
+    },
+    firebaseData: []
+  }),
+  methods: {
+    initializer () {
+      firebase.initializeApp(this.config)
+      this.get()
+    },
+    post () {
+      firebase.database().ref('user').push(
+        {
+          message: 'メッセージaaaa',
+          name: '名前',
+          image: '画像'
+        }
+      )
+    },
+    async get (){
+      const data = await firebase.database().ref(`user`)
+      data.on("value", function(snapshot) {
+        // console.log(snapshot.val())
+        this.firebaseData.push(snapshot.val())
+      },function (errorObject) {
+        console.log("The read failed: " + errorObject.code);
+      })
+    }
+  },
+  created () {
+    this.initializer() 
   }
 }
 </script>
@@ -45,8 +73,8 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
