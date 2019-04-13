@@ -2,6 +2,9 @@
   <section class="container">
     <div>
       <button @click="post">そーしん！</button>
+      <div v-for="data in firebaseData" :key="data.index">
+        {{ data.message }}
+      </div>
       <logo/>
       <h1 class="title">portfolio</h1>
       <h2 class="subtitle">My pioneering Nuxt.js project</h2>
@@ -15,44 +18,31 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
-import firebase from 'firebase'
+import firebase from '@/plugins/firebase'
 
 export default {
   components: {
     Logo
   },
   data: () => ({
-    config: {
-      apiKey: "AIzaSyCZgG6nYx--nb4Q7VwfLPQKLS--uy3no0I",
-      authDomain: "nya-nq.firebaseapp.com",
-      databaseURL: "https://nya-nq.firebaseio.com",
-      projectId: "nya-nq",
-      storageBucket: "nya-nq.appspot.com",
-      messagingSenderId: "567795671860"
-    },
     firebaseData: []
   }),
   methods: {
     initializer () {
-      firebase.initializeApp(this.config)
       this.get()
     },
     post () {
       firebase.database().ref('user').push(
         {
-          message: 'メッセージaaaa',
+          message: 'メッセージ',
           name: '名前',
           image: '画像'
         }
       )
     },
     async get (){
-      const data = await firebase.database().ref(`user`)
-      data.on("value", function(snapshot) {
-        // console.log(snapshot.val())
-        this.firebaseData.push(snapshot.val())
-      },function (errorObject) {
-        console.log("The read failed: " + errorObject.code);
+      await firebase.database().ref(`user`).once('value').then(result => {
+        this.firebaseData = result.val()
       })
     }
   },
