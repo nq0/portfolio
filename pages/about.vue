@@ -1,5 +1,5 @@
 <template>
-  <div class="home-container">
+    <div class="home-container">
     <div class="menu" @mouseenter="ishover = true" @mouseleave="ishover = false">
       <template v-if="!ishover">
         <ul class="menuber">
@@ -40,9 +40,11 @@
       </template>
     </div>
     <div :class="{ bulr: ishover }">
-      <div class="right"><img class="top-img" src="~/assets/images/top-neko.jpg" alt="neko"></div>
       <div class="title">
-        <p>NYAAAN</p>
+        <p>ABOUT</p>
+      </div>
+      <div class="contents">
+
       </div>
       <div>
         <i class="fas fa-fish fa-2x fish-icon fish1"/>
@@ -62,8 +64,8 @@
       </div>
     </div>
   </div>
-</template>
 
+</template>
 <script>
 export default {
   head() {
@@ -78,7 +80,6 @@ export default {
   })
 }
 </script>
-
 <style lang="scss" scoped>
 body {
   margin: 0;
@@ -88,6 +89,7 @@ body {
 .home-container {
   display: flex;
   justify-content: space-between;
+  background: #303755;
   .menu {
     z-index: 999;
     width: 52px;
@@ -136,11 +138,12 @@ body {
 }
 .title {
   position: absolute;
-  top: 15vh;
+  top: 10vh;
+  right: 72vw;
   p {
   font-weight: 200;
   font-size: 40px;
-  color: #303755;
+  color: #fffbf4;
   }
 }
 .fish-icon {
@@ -255,5 +258,15 @@ body {
 @keyframes fade-in {
   0% {opacity: 0; transform: translate3d(0,-20px,0);}
   100% {opacity: 1; transform: translate3d(0,0,0);}
+}
+.contents {
+  position: absolute;
+  top: 22vh;
+  right: 18vw;
+  width: 60vw;
+  height: 60vh;
+  background: #fffbf4;
+  opacity: 0.8;
+  border-radius: 2%;
 }
 </style>
