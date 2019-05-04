@@ -40,8 +40,14 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    'nuxt-webfontloader'
   ],
+  webfontloader: {
+    google: {
+      families: ['M+PLUS+1p']
+    }
+  },
 
   /*
   ** Build configuration
