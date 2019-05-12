@@ -86,9 +86,8 @@ body {
   font-family: 'M+PLUS+1p';
 }
 .home-container {
-  display: flex;
-  justify-content: space-between;
   .menu {
+    position: fixed;
     z-index: 999;
     width: 52px;
     height: 100vh;
@@ -121,7 +120,8 @@ body {
   }
 }
 .right {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
 }
 .top-img {
   height: 100vh;
@@ -137,6 +137,7 @@ body {
 .title {
   position: absolute;
   top: 15vh;
+  right: 78%;
   p {
   font-weight: 200;
   font-size: 40px;
@@ -148,77 +149,79 @@ body {
   color: rgb(156, 193, 236);
 }
 .fish1 {
-  top: 70px;
-  right: 1100px;
+  top: 4%;
+  right: 90%;
   animation:fuwafuwa 3s infinite linear alternate;
   &:hover + .circle {
     display: block;
-    top: 70px;
-    right: 1100px;
+    top: 4%;
+    right: 90%;
   }
 }
 .fish2 {
-  top: 600px;
-  right: 1100px;
+  top: 70%;
+  right: 88%;
   animation:fuwafuwa 3s infinite linear alternate;
   animation-delay: 2.3s;
   &:hover + .circle {
     display: block;
-    top: 600px;
-    right: 1100px;
+    top: 70%;
+    right: 88%;
   }
 }
 .fish3 {
-  top: 40px;
-  right: 480px;
+  top: 9%;
+  right: 43%;
   animation:fuwafuwa 3s infinite linear alternate;
   animation-delay: 0.6s;
   &:hover + .circle {
     display: block;
-    top: 40px;
-    right: 480px;
+    top: 9%;
+    right: 43%;
   }
 }
 .fish4 {
-  top: 500px;
+  top: 50%;
+  right: 83%;
   animation:fuwafuwa 3s infinite linear alternate;
   animation-delay: 0.9s;
   &:hover + .circle {
     display: block;
-    top: 500px;
+    top: 50%;
+    right: 83%;
   }
 }
 .fish5 {
-  top: 600px;
-  right: 160px;
+  top: 60%;
+  right: 11%;
   animation:fuwafuwa 3s infinite linear alternate;
   animation-delay: 1.2s;
   &:hover + .circle {
     display: block;
-    top: 600px;
-    right: 160px;
+    top: 60%;
+    right: 11%;
   }
 }
 .fish6 {
-  top: 700px;
-  right: 800px;
+  top: 86%;
+  right: 75%;
   animation:fuwafuwa 3s infinite linear alternate;
   animation-delay: 1.5s;
   &:hover + .circle {
     display: block;
-    top: 700px;
-    right: 800px;
+    top: 86%;
+    right: 75%;
   }
 }
 .fish7 {
-  top: 90px;
-  right: 100px;
+  top: 6%;
+  right: 14%;
   animation:fuwafuwa 3s infinite linear alternate;
   animation-delay: 1.8s;
   &:hover + .circle {
     display: block;
-    top: 90px;
-    right: 100px;
+    top: 6%;
+    right: 14%;
   }
 }
 .circle {

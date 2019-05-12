@@ -1,5 +1,5 @@
 <template>
-    <div class="home-container">
+  <div class="home-container">
     <div class="menu" @mouseenter="ishover = true" @mouseleave="ishover = false">
       <template v-if="!ishover">
         <ul class="menuber">
@@ -44,7 +44,7 @@
         <p>ABOUT</p>
       </div>
       <div class="contents">
-
+        <div></div>
       </div>
       <div>
         <i class="fas fa-fish fa-2x fish-icon fish1"/>
@@ -64,7 +64,6 @@
       </div>
     </div>
   </div>
-
 </template>
 <script>
 export default {
@@ -87,10 +86,9 @@ body {
   font-family: 'M+PLUS+1p';
 }
 .home-container {
-  display: flex;
-  justify-content: space-between;
   background: #303755;
   .menu {
+    position: fixed;
     z-index: 999;
     width: 52px;
     height: 100vh;
@@ -121,12 +119,6 @@ body {
       }
     }
   }
-}
-.right {
-  text-align: right;
-}
-.top-img {
-  height: 100vh;
 }
 .bulr {
   background: inherit;
