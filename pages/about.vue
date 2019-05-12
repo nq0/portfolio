@@ -39,7 +39,7 @@
         </ul>
       </template>
     </div>
-    <div :class="{ bulr: ishover }">
+    <div :class="{ bulr: ishover }" class="about-contents">
       <div class="title">
         <p>ABOUT</p>
       </div>
@@ -86,6 +86,7 @@ body {
   font-family: 'M+PLUS+1p';
 }
 .home-container {
+  display: block;
   background: #303755;
   .menu {
     position: fixed;
@@ -131,7 +132,7 @@ body {
 .title {
   position: absolute;
   top: 10vh;
-  right: 72vw;
+  right: 72%;
   p {
   font-weight: 200;
   font-size: 40px;
@@ -143,77 +144,79 @@ body {
   color: rgb(156, 193, 236);
 }
 .fish1 {
-  top: 70px;
-  right: 1100px;
+  top: 4%;
+  right: 90%;
   animation:fuwafuwa 3s infinite linear alternate;
   &:hover + .circle {
     display: block;
-    top: 70px;
-    right: 1100px;
+    top: 4%;
+    right: 90%;
   }
 }
 .fish2 {
-  top: 600px;
-  right: 1100px;
+  top: 70%;
+  right: 88%;
   animation:fuwafuwa 3s infinite linear alternate;
   animation-delay: 2.3s;
   &:hover + .circle {
     display: block;
-    top: 600px;
-    right: 1100px;
+    top: 70%;
+    right: 88%;
   }
 }
 .fish3 {
-  top: 40px;
-  right: 480px;
+  top: 9%;
+  right: 43%;
   animation:fuwafuwa 3s infinite linear alternate;
   animation-delay: 0.6s;
   &:hover + .circle {
     display: block;
-    top: 40px;
-    right: 480px;
+    top: 9%;
+    right: 43%;
   }
 }
 .fish4 {
-  top: 500px;
+  top: 50%;
+  right: 83%;
   animation:fuwafuwa 3s infinite linear alternate;
   animation-delay: 0.9s;
   &:hover + .circle {
     display: block;
-    top: 500px;
+    top: 50%;
+    right: 83%;
   }
 }
 .fish5 {
-  top: 600px;
-  right: 160px;
+  top: 60%;
+  right: 11%;
   animation:fuwafuwa 3s infinite linear alternate;
   animation-delay: 1.2s;
   &:hover + .circle {
     display: block;
-    top: 600px;
-    right: 160px;
+    top: 60%;
+    right: 11%;
   }
 }
 .fish6 {
-  top: 700px;
-  right: 800px;
+  top: 86%;
+  right: 75%;
   animation:fuwafuwa 3s infinite linear alternate;
   animation-delay: 1.5s;
   &:hover + .circle {
     display: block;
-    top: 700px;
-    right: 800px;
+    top: 86%;
+    right: 75%;
   }
 }
 .fish7 {
-  top: 90px;
-  right: 100px;
+  top: 6%;
+  right: 14%;
   animation:fuwafuwa 3s infinite linear alternate;
   animation-delay: 1.8s;
   &:hover + .circle {
     display: block;
-    top: 90px;
-    right: 100px;
+    top: 6%;
+    right: 14%;
   }
 }
 .circle {
@@ -251,14 +254,22 @@ body {
   0% {opacity: 0; transform: translate3d(0,-20px,0);}
   100% {opacity: 1; transform: translate3d(0,0,0);}
 }
-.contents {
-  position: absolute;
-  top: 22vh;
-  right: 18vw;
+.about-contents{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  .contents {
+  // position: absolute;
+  // top: 22vh;
+  // right: 18vw;
   width: 60vw;
   height: 60vh;
+  margin-left: 52px; 
   background: #fffbf4;
   opacity: 0.8;
   border-radius: 2%;
+  }
 }
 </style>
