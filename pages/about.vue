@@ -295,7 +295,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    min-width: 50vw;
+    min-width: 62vw;
     min-height: 60vh;
     margin-left: 52px; 
     background: #fffbf4;
