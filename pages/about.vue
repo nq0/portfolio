@@ -44,7 +44,36 @@
         <p>ABOUT</p>
       </div>
       <div class="contents">
-        <div></div>
+        <div class="left">
+          <img src="~/assets/images/icon.png" alt="icon">
+          <div>
+            <p class="about-title">NOE / nq0</p>
+            <p class="about-left">1999年6月生まれ</p>
+            <p>福岡工業大学短期大学部所属</p>
+            <p class="about-title">
+              <a href="https://github.com/nq0" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="mailto:noe.works0@gmail.com"><i class="fas fa-envelope"></i></a>
+            </p>
+          </div>
+        </div>
+        <div class="right">
+          <div>
+            <p class="about-title">LIKE</p>
+            <p class="grey">おいしいごはん/おえかき/旅行/ねこ/カービィ</p>
+          </div>
+          <div>
+            <p class="about-title">SKILLSET</p>
+            <p class="grey">HTML/CSS/JS(Vue.js/Nuxt)/C/JAVA</p>
+          </div>
+          <div>
+            <p class="about-title-small">触ったことがあるやつとか</p>
+            <p class="grey">Ruby(Rails)/PHP/Bootstrap/Firebase</p>
+          </div>
+          <div>
+            <p class="about-title">FAVORIT FOOD</p>
+            <p class="grey">おすし/ハンバーグ/おこめ/チーズ/その他諸々</p>
+          </div>
+        </div>
       </div>
       <div>
         <i class="fas fa-fish fa-2x fish-icon fish1"/>
@@ -88,6 +117,7 @@ body {
 .home-container {
   display: block;
   background: #303755;
+  height: 100%;
   .menu {
     position: fixed;
     z-index: 999;
@@ -261,15 +291,55 @@ body {
   width: 100vw;
   height: 100vh;
   .contents {
-  // position: absolute;
-  // top: 22vh;
-  // right: 18vw;
-  width: 60vw;
-  height: 60vh;
-  margin-left: 52px; 
-  background: #fffbf4;
-  opacity: 0.8;
-  border-radius: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 50vw;
+    min-height: 60vh;
+    margin-left: 52px; 
+    background: #fffbf4;
+    opacity: 0.8;
+    border-radius: 2%;
+    padding: 2%;
+    .about-title {
+      color: #c498a7;
+      font-size: 2rem;
+      font-weight: 300;
+      &-small {
+        color: #c498a7;
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #c498a7;
+      padding: 0 4%;
+    }
+    .left {
+      color: #303755;
+      text-align: center;
+      padding: 4%;
+      img {
+        padding: 0 0 6% 0;
+        width: 90%;
+        border-radius: 50%;
+      }
+      .about-left {
+      }
+    }
+    .right {
+      text-align: center;
+      align-self: center;
+      padding: 4%;
+      div {
+        padding-bottom: 2rem;
+      }
+      .grey {
+        color: #474f70;
+      }
+    }
   }
 }
 </style>
