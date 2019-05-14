@@ -29,12 +29,14 @@
             </nuxt-link>
           </li>
           <li class="menu-item">
-            <i class="fas fa-bong fa-2x icon-color fa-fw"></i>
-            <span :class="{ showtitle: ishover }">MAKE</span>
+            <nuxt-link to="/made">
+              <i class="fas fa-bong fa-2x icon-color fa-fw"></i>
+              <span :class="{ showtitle: ishover }">MADE</span>
+            </nuxt-link>
           </li>
           <li class="menu-item">
             <i class="fas fa-dice-d6 fa-2x icon-color fa-fw"></i>
-            <span :class="{ showtitle: ishover }">GAME</span>
+            <span :class="{ showtitle: ishover }">NYAAAN</span>
           </li>
         </ul>
       </template>
@@ -44,27 +46,13 @@
       <div class="title">
         <p>NYAAAN</p>
       </div>
-      <div>
-        <i class="fas fa-fish fa-2x fish-icon fish1"/>
-        <div class="circle"></div>
-        <i class="fas fa-fish fa-2x fish-icon fish2"/>
-        <div class="circle"></div>
-        <i class="fas fa-fish fa-2x fish-icon fish3"/>
-        <div class="circle"></div>
-        <i class="fas fa-fish fa-2x fish-icon fish4"/>
-        <div class="circle"></div>
-        <i class="fas fa-fish fa-2x fish-icon fish5"/>
-        <div class="circle"></div>
-        <i class="fas fa-fish fa-2x fish-icon fish6"/>
-        <div class="circle"></div>
-        <i class="fas fa-fish fa-2x fish-icon fish7"/>
-        <div class="circle"></div>
-      </div>
+      <Fishes />
     </div>
   </div>
 </template>
 
 <script>
+import Fishes from '~/components/Fishes.vue'
 export default {
   head() {
     return {
@@ -75,17 +63,16 @@ export default {
   },
   data: () => ({
     ishover: false
-  })
+  }),
+  components: {
+    Fishes
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'M+PLUS+1p';
-}
 .home-container {
+  font-family: 'M+PLUS+1p';
   .menu {
     position: fixed;
     z-index: 999;
@@ -137,11 +124,11 @@ body {
 .title {
   position: absolute;
   top: 15vh;
-  right: 78%;
+  right: 72%;
   p {
   font-weight: 200;
   font-size: 40px;
-  color: #303755;
+  color: #67678f;
   }
 }
 .fish-icon {

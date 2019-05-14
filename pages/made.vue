@@ -43,37 +43,28 @@
     </div>
     <div :class="{ bulr: ishover }" class="about-contents">
       <div class="title">
-        <p>ABOUT</p>
+        <p>MADE</p>
       </div>
       <div class="contents">
-        <div class="left">
-          <img src="~/assets/images/icon.png" alt="icon">
-          <div>
-            <p class="about-title">NOE / nq0</p>
-            <p class="about-left">1999年6月生まれ</p>
-            <p>福岡工業大学短期大学部所属</p>
-            <p class="about-title">
-              <a href="https://github.com/nq0" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="mailto:noe.works0@gmail.com"><i class="fas fa-envelope"></i></a>
-            </p>
+        <div class="made-item">
+          <img src="~/assets/images/made-1.png" alt="pic1">
+          <div class="made-contents">
+            <p class="made-title">初めて作ったサイト</p>
+            <p class="small">TOPの画像はスライドショー</p>
           </div>
         </div>
-        <div class="right">
-          <div>
-            <p class="about-title">LIKE</p>
-            <p class="grey">おいしいごはん/おえかき/旅行/ねこ/カービィ</p>
+        <div class="made-item">
+          <img src="~/assets/images/made-2.png" alt="pic2">
+          <div class="made-contents">
+            <p class="made-title">授業で作ったサイト</p>
+            <p class="small">ページ遷移時にふわっとするアレを実装！</p>
           </div>
-          <div>
-            <p class="about-title">SKILLSET</p>
-            <p class="grey">HTML/CSS/JS(Vue.js/Nuxt)/C/JAVA</p>
-          </div>
-          <div>
-            <p class="about-title-small">触ったことがあるやつとか</p>
-            <p class="grey">Ruby(Rails)/PHP/Bootstrap/Firebase</p>
-          </div>
-          <div>
-            <p class="about-title">FAVORIT FOOD</p>
-            <p class="grey">おすし/ハンバーグ/おこめ/チーズ/その他諸々</p>
+        </div>
+        <div class="made-item">
+          <img src="~/assets/images/made-3.png" alt="pic3">
+          <div class="made-contents">
+            <p class="made-title">プロジェクトで作ったサイト</p>
+            <p class="small">チーム制作 表示領域に入ったら画像をアニメーションさせた</p>
           </div>
         </div>
       </div>
@@ -105,7 +96,7 @@ export default {
 .home-container {
   font-family: 'M+PLUS+1p';
   display: block;
-  background: #303755;
+  background: #fffbf4;
   height: 100%;
   .menu {
     position: fixed;
@@ -155,7 +146,7 @@ export default {
   p {
   font-weight: 200;
   font-size: 40px;
-  color: #fffbf4;
+  color: #c498a7;
   }
 }
 .showtitle {
@@ -181,50 +172,40 @@ export default {
   .contents {
     display: flex;
     flex-wrap: wrap;
+    width: 72vw;
     justify-content: space-around;
     align-items: center;
-    min-width: 62vw;
-    min-height: 60vh;
-    max-height: 72vh;
-    margin-left: 52px; 
-    margin-top: 4%;
-    background: #fffbf4;
-    opacity: 0.8;
-    border-radius: 2%;
-    .about-title {
-      color: #c498a7;
-      font-size: 2rem;
+    margin-left: 52px;
+    .made-item {
+      background: #303755;
+      margin: 1%;
+      border-radius: 2%;
+      text-align: center;
+      width: 29%;
+      min-width: 320px;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: scale-down;
+        border-radius: 2% 2% 0 0;
+        opacity: 0.6;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .made-title {
+      color: #fffbf4;
+      font-size: 1.1rem;
       font-weight: 300;
-      &-small {
+      }
+      .small {
         color: #c498a7;
-        font-size: 1.5rem;
+        font-size: 0.8rem;
         font-weight: 300;
       }
-    }
-    a {
-      text-decoration: none;
-      color: #c498a7;
-      padding: 0 4%;
-    }
-    .left {
-      color: #303755;
-      text-align: center;
-      padding: 4%;
-      img {
-        padding: 0 0 6% 0;
-        width: 90%;
-        border-radius: 50%;
-      }
-    }
-    .right {
-      text-align: center;
-      align-self: center;
-      padding: 4%;
-      div {
-        padding-bottom: 2rem;
-      }
-      .grey {
-        color: #474f70;
+      .made-contents {
+        padding-top: 2%;
       }
     }
   }
