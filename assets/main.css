@@ -1,0 +1,10 @@
+.page-enter-active, .page-leave-active {
+  transition: page .3s;
+}
+.page-enter, .page-leave-active {
+  animation: opacity .3s;
+}
+@keyframes opacity {
+  0% { opacity: 1 }
+  100% { opacity: 0; }
+}
