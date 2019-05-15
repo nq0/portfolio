@@ -41,16 +41,48 @@
         </ul>
       </template>
     </div>
-    <div :class="{ bulr: ishover }">
-      <div class="right"><img class="top-img" src="~/assets/images/top-neko.jpg" alt="neko"></div>
+    <div :class="{ bulr: ishover }" class="about-contents">
       <div class="title">
-        <p>NYAAAN</p>
+        <p>ABOUT</p>
       </div>
-      <Fishes />
+      <div class="contents">
+        <div class="left">
+          <img src="~/assets/images/icon.png" alt="icon">
+          <div>
+            <p class="about-title">NOE / nq0</p>
+            <p class="about-left">1999年6月生まれ</p>
+            <p>福岡工業大学短期大学部所属</p>
+            <p class="about-title">
+              <a href="https://github.com/nq0" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="mailto:noe.works0@gmail.com"><i class="fas fa-envelope"></i></a>
+            </p>
+          </div>
+        </div>
+        <div class="right">
+          <div>
+            <p class="about-title">LIKE</p>
+            <p class="grey">おいしいごはん/おえかき/旅行/ねこ/カービィ</p>
+          </div>
+          <div>
+            <p class="about-title">SKILLSET</p>
+            <p class="grey">HTML/CSS/JS(Vue.js/Nuxt)/C/JAVA</p>
+          </div>
+          <div>
+            <p class="about-title-small">触ったことがあるやつとか</p>
+            <p class="grey">Ruby(Rails)/PHP/Bootstrap/Firebase</p>
+          </div>
+          <div>
+            <p class="about-title">FAVORIT FOOD</p>
+            <p class="grey">おすし/ハンバーグ/おこめ/チーズ/その他諸々</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <Fishes />
+      </div>
     </div>
   </div>
 </template>
-
 <script>
 import Fishes from '~/components/Fishes.vue'
 export default {
@@ -69,10 +101,12 @@ export default {
   }
 }
 </script>
-
 <style lang="scss" scoped>
 .home-container {
   font-family: 'M+PLUS+1p';
+  display: block;
+  background: #303755;
+  height: 100%;
   .menu {
     position: fixed;
     z-index: 999;
@@ -106,13 +140,6 @@ export default {
     }
   }
 }
-.right {
-  display: flex;
-  justify-content: flex-end;
-}
-.top-img {
-  height: 100vh;
-}
 .bulr {
   background: inherit;
   filter: blur(4px);
@@ -123,114 +150,13 @@ export default {
 }
 .title {
   position: absolute;
-  top: 15vh;
+  top: 10vh;
   right: 72%;
   p {
   font-weight: 200;
   font-size: 40px;
-  color: #67678f;
+  color: #fffbf4;
   }
-}
-.fish-icon {
-  position: absolute;
-  color: rgb(156, 193, 236);
-}
-.fish1 {
-  top: 4%;
-  right: 90%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  &:hover + .circle {
-    display: block;
-    top: 4%;
-    right: 90%;
-  }
-}
-.fish2 {
-  top: 70%;
-  right: 88%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  animation-delay: 2.3s;
-  &:hover + .circle {
-    display: block;
-    top: 70%;
-    right: 88%;
-  }
-}
-.fish3 {
-  top: 9%;
-  right: 43%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  animation-delay: 0.6s;
-  &:hover + .circle {
-    display: block;
-    top: 9%;
-    right: 43%;
-  }
-}
-.fish4 {
-  top: 50%;
-  right: 83%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  animation-delay: 0.9s;
-  &:hover + .circle {
-    display: block;
-    top: 50%;
-    right: 83%;
-  }
-}
-.fish5 {
-  top: 60%;
-  right: 11%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  animation-delay: 1.2s;
-  &:hover + .circle {
-    display: block;
-    top: 60%;
-    right: 11%;
-  }
-}
-.fish6 {
-  top: 86%;
-  right: 75%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  animation-delay: 1.5s;
-  &:hover + .circle {
-    display: block;
-    top: 86%;
-    right: 75%;
-  }
-}
-.fish7 {
-  top: 6%;
-  right: 14%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  animation-delay: 1.8s;
-  &:hover + .circle {
-    display: block;
-    top: 6%;
-    right: 14%;
-  }
-}
-.circle {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: solid thin #8fa2e4;
-  border-radius: 50%;
-  display: none;
-  animation: wave 1.6s infinite;
-}
-@keyframes wave {
-  0% {transform: scale(1);}
-  100% {transform: scale(4); opacity: 0;}
-}
-.fuwafuwa {
-  animation:fuwafuwa 3s infinite linear alternate;
-}
-@keyframes fuwafuwa {
-0% {transform:translate(0, 0) rotate(-10deg);}
-50% {transform:translate(0, -10px) rotate(0deg);}
-100% {transform:translate(0, 0)rotate(10deg);}
 }
 .showtitle {
   color: #fff;
@@ -245,5 +171,62 @@ export default {
 @keyframes fade-in {
   0% {opacity: 0; transform: translate3d(0,-20px,0);}
   100% {opacity: 1; transform: translate3d(0,0,0);}
+}
+.about-contents{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  .contents {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 62vw;
+    min-height: 60vh;
+    max-height: 72vh;
+    margin-left: 52px; 
+    margin-top: 4%;
+    background: #fffbf4;
+    opacity: 0.8;
+    border-radius: 2%;
+    .about-title {
+      color: #c498a7;
+      font-size: 2rem;
+      font-weight: 300;
+      &-small {
+        color: #c498a7;
+        font-size: 1.5rem;
+        font-weight: 300;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: #c498a7;
+      padding: 0 4%;
+    }
+    .left {
+      color: #303755;
+      text-align: center;
+      padding: 4%;
+      img {
+        padding: 0 0 6% 0;
+        width: 90%;
+        border-radius: 50%;
+      }
+    }
+    .right {
+      text-align: center;
+      align-self: center;
+      padding: 4%;
+      div {
+        padding-bottom: 2rem;
+      }
+      .grey {
+        color: #474f70;
+      }
+    }
+  }
 }
 </style>

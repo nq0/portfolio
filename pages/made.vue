@@ -41,16 +41,39 @@
         </ul>
       </template>
     </div>
-    <div :class="{ bulr: ishover }">
-      <div class="right"><img class="top-img" src="~/assets/images/top-neko.jpg" alt="neko"></div>
+    <div :class="{ bulr: ishover }" class="about-contents">
       <div class="title">
-        <p>NYAAAN</p>
+        <p>MADE</p>
       </div>
-      <Fishes />
+      <div class="contents">
+        <div class="made-item">
+          <img src="~/assets/images/made-1.png" alt="pic1">
+          <div class="made-contents">
+            <p class="made-title">初めて作ったサイト</p>
+            <p class="small">TOPの画像はスライドショー</p>
+          </div>
+        </div>
+        <div class="made-item">
+          <img src="~/assets/images/made-2.png" alt="pic2">
+          <div class="made-contents">
+            <p class="made-title">授業で作ったサイト</p>
+            <p class="small">ページ遷移時にふわっとするアレを実装！</p>
+          </div>
+        </div>
+        <div class="made-item">
+          <img src="~/assets/images/made-3.png" alt="pic3">
+          <div class="made-contents">
+            <p class="made-title">プロジェクトで作ったサイト</p>
+            <p class="small">チーム制作 表示領域に入ったら画像をアニメーションさせた</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <Fishes />
+      </div>
     </div>
   </div>
 </template>
-
 <script>
 import Fishes from '~/components/Fishes.vue'
 export default {
@@ -69,10 +92,12 @@ export default {
   }
 }
 </script>
-
 <style lang="scss" scoped>
 .home-container {
   font-family: 'M+PLUS+1p';
+  display: block;
+  background: #fffbf4;
+  height: 100%;
   .menu {
     position: fixed;
     z-index: 999;
@@ -106,13 +131,6 @@ export default {
     }
   }
 }
-.right {
-  display: flex;
-  justify-content: flex-end;
-}
-.top-img {
-  height: 100vh;
-}
 .bulr {
   background: inherit;
   filter: blur(4px);
@@ -123,114 +141,13 @@ export default {
 }
 .title {
   position: absolute;
-  top: 15vh;
+  top: 10vh;
   right: 72%;
   p {
   font-weight: 200;
   font-size: 40px;
-  color: #67678f;
+  color: #c498a7;
   }
-}
-.fish-icon {
-  position: absolute;
-  color: rgb(156, 193, 236);
-}
-.fish1 {
-  top: 4%;
-  right: 90%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  &:hover + .circle {
-    display: block;
-    top: 4%;
-    right: 90%;
-  }
-}
-.fish2 {
-  top: 70%;
-  right: 88%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  animation-delay: 2.3s;
-  &:hover + .circle {
-    display: block;
-    top: 70%;
-    right: 88%;
-  }
-}
-.fish3 {
-  top: 9%;
-  right: 43%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  animation-delay: 0.6s;
-  &:hover + .circle {
-    display: block;
-    top: 9%;
-    right: 43%;
-  }
-}
-.fish4 {
-  top: 50%;
-  right: 83%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  animation-delay: 0.9s;
-  &:hover + .circle {
-    display: block;
-    top: 50%;
-    right: 83%;
-  }
-}
-.fish5 {
-  top: 60%;
-  right: 11%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  animation-delay: 1.2s;
-  &:hover + .circle {
-    display: block;
-    top: 60%;
-    right: 11%;
-  }
-}
-.fish6 {
-  top: 86%;
-  right: 75%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  animation-delay: 1.5s;
-  &:hover + .circle {
-    display: block;
-    top: 86%;
-    right: 75%;
-  }
-}
-.fish7 {
-  top: 6%;
-  right: 14%;
-  animation:fuwafuwa 3s infinite linear alternate;
-  animation-delay: 1.8s;
-  &:hover + .circle {
-    display: block;
-    top: 6%;
-    right: 14%;
-  }
-}
-.circle {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border: solid thin #8fa2e4;
-  border-radius: 50%;
-  display: none;
-  animation: wave 1.6s infinite;
-}
-@keyframes wave {
-  0% {transform: scale(1);}
-  100% {transform: scale(4); opacity: 0;}
-}
-.fuwafuwa {
-  animation:fuwafuwa 3s infinite linear alternate;
-}
-@keyframes fuwafuwa {
-0% {transform:translate(0, 0) rotate(-10deg);}
-50% {transform:translate(0, -10px) rotate(0deg);}
-100% {transform:translate(0, 0)rotate(10deg);}
 }
 .showtitle {
   color: #fff;
@@ -245,5 +162,52 @@ export default {
 @keyframes fade-in {
   0% {opacity: 0; transform: translate3d(0,-20px,0);}
   100% {opacity: 1; transform: translate3d(0,0,0);}
+}
+.about-contents{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  .contents {
+    display: flex;
+    flex-wrap: wrap;
+    width: 72vw;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 52px;
+    .made-item {
+      background: #303755;
+      margin: 1%;
+      border-radius: 2%;
+      text-align: center;
+      width: 29%;
+      min-width: 320px;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: scale-down;
+        border-radius: 2% 2% 0 0;
+        opacity: 0.6;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .made-title {
+      color: #fffbf4;
+      font-size: 1.1rem;
+      font-weight: 300;
+      }
+      .small {
+        color: #c498a7;
+        font-size: 0.8rem;
+        font-weight: 300;
+      }
+      .made-contents {
+        padding-top: 2%;
+      }
+    }
+  }
 }
 </style>
