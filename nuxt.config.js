@@ -42,7 +42,8 @@ module.exports = {
   */
   modules: [
     'bootstrap-vue/nuxt',
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    '@nuxtjs/dotenv',
   ],
   webfontloader: {
     google: {
