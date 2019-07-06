@@ -65,14 +65,14 @@
           </div>
           <div>
             <p class="about-title">SKILLSET</p>
-            <p class="grey">HTML/CSS/JS(Vue.js/Nuxt)/C/JAVA</p>
+            <p class="grey">HTML/CSS/JS(Vue.js/Nuxt)/C/Java</p>
           </div>
           <div>
             <p class="about-title-small">触ったことがあるやつとか</p>
             <p class="grey">Ruby(Rails)/PHP/Bootstrap/Firebase</p>
           </div>
           <div>
-            <p class="about-title">FAVORIT FOOD</p>
+            <p class="about-title">FAVORITE FOOD</p>
             <p class="grey">おすし/ハンバーグ/おこめ/チーズ/その他諸々</p>
           </div>
         </div>
