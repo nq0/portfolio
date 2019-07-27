@@ -1,6 +1,6 @@
 # portfolio
 
-> My pioneering Nuxt.js project
+> にゃ〜〜ん！
 
 ## Build Setup
 

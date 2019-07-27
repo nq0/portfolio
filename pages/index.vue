@@ -35,8 +35,10 @@
             </nuxt-link>
           </li>
           <li class="menu-item">
-            <i class="fas fa-dice-d6 fa-2x icon-color fa-fw"></i>
-            <span :class="{ showtitle: ishover }">NYAAAN</span>
+            <nuxt-link to="/neko">
+              <i class="fas fa-dice-d6 fa-2x icon-color fa-fw"></i>
+              <span :class="{ showtitle: ishover }">NYAAAN</span>
+            </nuxt-link>
           </li>
         </ul>
       </template>
