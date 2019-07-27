@@ -45,38 +45,25 @@
     </div>
     <div :class="{ bulr: ishover }" class="about-contents">
       <div class="title">
-        <p>ABOUT</p>
+        <p>???</p>
       </div>
       <div class="contents">
-        <div class="left">
-          <img src="~/assets/images/icon.png" alt="icon">
-          <div>
-            <p class="about-title">NOE / nq0</p>
-            <p class="about-left">1999年6月生まれ</p>
-            <p>福岡工業大学短期大学部所属</p>
-            <p class="about-title">
-              <a href="https://github.com/nq0" target="_blank"><i class="fab fa-github"></i></a>
-              <a href="mailto:noe.works0@gmail.com"><i class="fas fa-envelope"></i></a>
-            </p>
+        <div class="text">
+          <p>ちゅ〜るをあげてねこ様からの一言をもらおう！</p>
+        </div>
+        <div class="items">
+          <div class="nekosama">
+            <img class="neko" src="~/assets/images/nekochan.png" alt="neko">
+            <img :class="{ move: moveTyuru }" class="tyuru" src="~/assets/images/tyuru.png" alt="ちゅ〜る">
+          </div>
+          <div class="word">
+            <div class="hukidashi">
+              <div class="comment">{{ nekoText }}</div>
+            </div>
           </div>
         </div>
-        <div class="right">
-          <div>
-            <p class="about-title">LIKE</p>
-            <p class="grey">おいしいごはん/おえかき/旅行/ねこ/カービィ</p>
-          </div>
-          <div>
-            <p class="about-title">SKILLSET</p>
-            <p class="grey">HTML/CSS/JS(Vue.js/Nuxt)/C/Java</p>
-          </div>
-          <div>
-            <p class="about-title-small">触ったことがあるやつとか</p>
-            <p class="grey">Ruby(Rails)/PHP/Bootstrap/Firebase</p>
-          </div>
-          <div>
-            <p class="about-title">FAVORITE FOOD</p>
-            <p class="grey">おすし/ハンバーグ/おこめ/チーズ/その他諸々</p>
-          </div>
+        <div>
+          <button @click="doClick" class="button">ちゅ〜るをあげる</button>
         </div>
       </div>
       <div>
@@ -96,10 +83,35 @@ export default {
     }
   },
   data: () => ({
-    ishover: false
+    ishover: false,
+    nekoText: 'ちゅ〜るをよこすのだ',
+    moveTyuru: false,
+    nekoWords: [
+      '美味',
+      'にゃ〜ん',
+      'よきにはからえ',
+      'ゴロゴロ',
+      'なでなでを許可しよう',
+      'もっとくれ',
+      'う〜む',
+      '入眠',
+      'お昼寝タイム',
+      'くるしゅうない',
+      '感服つかまつった'
+    ]
   }),
   components: {
     Fishes
+  },
+  methods: {
+    doClick() {
+      this.moveTyuru = true
+      setTimeout(() => this.setText(), 1000)
+    },
+    setText() {
+      const i = Math.floor(Math.random() * 11)
+      this.nekoText = this.nekoWords[i]
+    }
   }
 }
 </script>
@@ -182,6 +194,7 @@ export default {
   height: 100vh;
   .contents {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
@@ -193,40 +206,87 @@ export default {
     background: #fffbf4;
     opacity: 0.8;
     border-radius: 2%;
-    .about-title {
-      color: #c498a7;
-      font-size: 2rem;
-      font-weight: 300;
-      &-small {
-        color: #c498a7;
-        font-size: 1.5rem;
-        font-weight: 300;
-      }
-    }
-    a {
-      text-decoration: none;
-      color: #c498a7;
-      padding: 0 4%;
-    }
-    .left {
+    .text {
+      font-size: 1.2rem;
       color: #303755;
-      text-align: center;
-      padding: 4%;
-      img {
-        padding: 0 0 6% 0;
-        width: 90%;
-        border-radius: 50%;
+    }
+    .items {
+      display: flex;
+      flex-direction: row;
+      .nekosama {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        .neko {
+          width: 76%;
+        }
+        .tyuru {
+          width: 40%;
+          position: absolute;
+          bottom: -116px;
+        }
+        .move {
+          transition: .6s;
+          transform: translate(0,-66px);
+        }
+      }
+      .word {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30vw;
+        height: 30vh;
+        .hukidashi {
+          position: relative;
+          width: 25vw;
+          height: 25vh;
+          background-color: white;
+          border: solid 2px #dfb0c0;
+          border-radius: 30px;
+          box-sizing: border-box;
+          &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: -32px;
+            margin-top: -16px;
+            border: 16px solid transparent;
+            border-right: 16px solid white;
+            z-index: 2;
+            }
+          &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -36px;
+            margin-top: -18px;
+            border: 18px solid transparent;
+            border-right: 18px solid #dfb0c0;
+            z-index: 1;
+          }
+          .comment {
+            height: 24vh;
+            color: #4c5788;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+          }
+        }
       }
     }
-    .right {
-      text-align: center;
-      align-self: center;
-      padding: 4%;
-      div {
-        padding-bottom: 2rem;
+    .button {
+      padding: 0.3em 1em;
+      color: #5764a0;
+      border: solid 2px #dfb0c0;
+      border-radius: 20px;
+      transition: .4s;
+      &:hover {
+        background: #e6b3b3;
+        color: white;
       }
-      .grey {
-        color: #474f70;
+      &:active {
+        transform: translate(2px,2px);
       }
     }
   }
