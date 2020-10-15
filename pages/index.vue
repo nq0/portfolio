@@ -48,10 +48,6 @@
       <div class="title">
         <p>NYAAAN</p>
       </div>
-      <div class="info">
-        <p>2019/5/16 開設</p>
-        <p>レスポンシブに(そのうち)対応予定！</p>
-      </div>
       <Fishes />
     </div>
   </div>
