@@ -49,11 +49,11 @@
       </div>
       <div class="contents">
         <div class="left">
-          <img src="~/assets/images/icon.png" alt="icon">
+          <img src="~/assets/images/icon2.png" alt="icon">
           <div>
             <p class="about-title">NOE / nq0</p>
             <p class="about-left">1999年6月生まれ</p>
-            <p>福岡工業大学短期大学部所属</p>
+            <p>2020/04 ~ iQPS Inc.</p>
             <p class="about-title">
               <a href="https://github.com/nq0" target="_blank"><i class="fab fa-github"></i></a>
               <a href="mailto:noe.works0@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -63,20 +63,20 @@
         <div class="right">
           <div>
             <p class="about-title">LIKE</p>
-            <p class="grey">おいしいごはん/おえかき/旅行/ねこ/カービィ</p>
+            <p class="grey">ごはん/おえかき/旅行/ねこ/カービィ</p>
           </div>
           <div>
             <p class="about-title">SKILLSET</p>
-            <p class="grey">HTML/CSS/JS(Vue.js/Nuxt)/C/Java</p>
+            <p class="grey">HTML/CSS/JS(Vue.js/Nuxt)/Ruby</p>
           </div>
           <div>
-            <p class="about-title-small">触ったことがあるやつとか</p>
-            <p class="grey">Ruby(Rails)/PHP/Bootstrap/Firebase</p>
+            <p class="about-title-small">studying...</p>
+            <p class="grey">GO/PHP/Bootstrap/Firebase</p>
           </div>
-          <div>
+          <!-- <div>
             <p class="about-title">FAVORITE FOOD</p>
             <p class="grey">おすし/ハンバーグ/おこめ/チーズ/その他諸々</p>
-          </div>
+          </div> -->
         </div>
       </div>
       <div>
